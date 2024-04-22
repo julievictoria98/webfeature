@@ -6,7 +6,7 @@ const interactivity = {
   mode: "scroll",
   actions: [
     {
-      visibility: [0, 0.2],
+      visibility: [0],
       type: "stop",
       frames: [0],
     },

@@ -18,6 +18,7 @@ import Umbrella from "../Components/Umbrella.astro";
     <h2>er intet for småt, for stort eller for pinligt at tale om, og ingen tanker for forkerte.</h2>
     <Mirror />
     <Umbrella />
+    <div class="bg"></div>
   </body>
 </html>
 <style>
@@ -27,9 +28,13 @@ import Umbrella from "../Components/Umbrella.astro";
   }
   body {
     background: #FFF5EB;
+  }
+  .bg{
     background-image: url('../public/Imgs/FloralVines.png');
     background-size:cover;
     background-repeat: no-repeat;
+    mix-blend-mode: multiply;
+    
   }
   h1 {
         color: #FC4E5C;
