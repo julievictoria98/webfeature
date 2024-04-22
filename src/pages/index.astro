@@ -1,17 +1,48 @@
 ---
 import Mirror from "../Components/Mirror.astro";
+import Umbrella from "../Components/Umbrella.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/eoj5zvx.css">
+    <link rel="stylesheet" href="https://use.typekit.net/eoj5zvx.css">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
   <body>
-    <h1>Astro</h1>
+    <h1>Hos GirlTalk</h1>
+    <h2>er intet for småt, for stort eller for pinligt at tale om, og ingen tanker for forkerte.</h2>
     <Mirror />
+    <Umbrella />
   </body>
 </html>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #FFF5EB;
+    background-image: url('../public/Imgs/FloralVines.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+  }
+  h1 {
+        color: #FC4E5C;
+      font-family: "obviously", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 3rem;
+    }
+    h2 {
+      color: #FC4E5C;
+      font-family: "archivo-variable", sans-serif;
+      font-variation-settings: "wdth" 100, "wght" 600;
+      font-style:'SemiBold' ;
+      font-size: 1.5rem;
+    }
+</style>
