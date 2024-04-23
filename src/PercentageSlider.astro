@@ -70,8 +70,8 @@ const {graphText, classColor, graphImg} = Astro.props
                 <input value="0" min="0" max="100" id="range" type="range" />
             </div>
             <h2 class="percentage">0</h2>
-            <div id="imageContainer">
-                <img src={graphImg} alt="Your Image" id="hiddenImage">
+            <div id="imageContainer"  id="hiddenImage">
+                <slot/>
             </div>
 
         </article>  

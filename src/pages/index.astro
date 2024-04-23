@@ -1,5 +1,9 @@
 ---
 import PercentageSlider from "../PercentageSlider.astro"
+import Mirror from "../components/Mirror.astro"
+import Sparkling from "../components/Sparkling.astro"
+import Stars from "../components/Stars.astro"
+import Umbrella from "../components/Umbrella.astro"
 
 ---
 
@@ -12,32 +16,27 @@ import PercentageSlider from "../PercentageSlider.astro"
 		<title>Astro</title>
 	</head>
 	<body>
-		<PercentageSlider
-		graphText = "HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
-		classColor = "bluecolor"
-		graphImg="../public/star.svg"
-		/>
+		<PercentageSlider graphText = "HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
+		classColor = "bluecolor">
+		<Stars/>
+	</PercentageSlider>
 		<br>
 		<PercentageSlider
 		graphText = "HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
-		classColor = "redcolor"
-		graphImg="../public/star.svg"
-
+		classColor = "redcolor">
+	<Umbrella/>
+	</PercentageSlider>
+		<br>
+		<PercentageSlider graphText = "HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
+		classColor = "bluecolor">
+		<Mirror/>
+	</PercentageSlider>
 		
-		/>
-		<br>
-		<PercentageSlider
-		graphText = "HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
-		classColor = "bluecolor"
-		graphImg="../public/star.svg"
-
-		/>
-		<PercentageSlider
-		graphText = "HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
-		classColor = "bluecolor"
-		graphImg="../public/favicon.svg"
-
-		/>
+	<PercentageSlider graphText = "HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
+		classColor = "bluecolor">
+	<Sparkling/>
+	</PercentageSlider>
+		
 
 
 	</body>
