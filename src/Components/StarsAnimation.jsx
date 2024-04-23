@@ -6,12 +6,17 @@ const interactivity = {
   mode: "scroll",
   actions: [
     {
-      visibility: [0, 0.2],
+      visibility: [0],
       type: "stop",
-      frames: [0, 45],
+      frames: [0],
     },
     {
       visibility: [0.2, 0.45],
+      type: "seek",
+      frames: [0, 45],
+    },
+    {
+      visibility: [0.45, 1.0],
       type: "seek",
       frames: [45, 300],
     },
