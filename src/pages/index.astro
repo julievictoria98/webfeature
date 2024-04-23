@@ -1,4 +1,5 @@
 ---
+import PercentageSlider from "../PercentageSlider.astro"
 
 ---
 
@@ -11,6 +12,63 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<PercentageSlider
+		graphText = "HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
+		classColor = "bluecolor"
+		graphImg="../public/star.svg"
+		/>
+		<br>
+		<PercentageSlider
+		graphText = "HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
+		classColor = "redcolor"
+		graphImg="../public/star.svg"
+
+		
+		/>
+		<br>
+		<PercentageSlider
+		graphText = "HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
+		classColor = "bluecolor"
+		graphImg="../public/star.svg"
+
+		/>
+		<PercentageSlider
+		graphText = "HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
+		classColor = "bluecolor"
+		graphImg="../public/favicon.svg"
+
+		/>
+
+		<script>
+            const sliderThumb = document.querySelector('#range');
+            const imageContainer = document.getElementById('imageContainer');
+            const hiddenImage = document.getElementById('hiddenImage');
+            const ranges = document.querySelectorAll('input[type="range"]');
+            const percentages = document.querySelectorAll('.percentage');
+
+            // Add event listeners to each input range
+            ranges.forEach(function(range, index) {
+                range.addEventListener('input', function() {
+                    percentages[index].innerHTML = range.value + '%';
+                });
+				range.addEventListener('click', function(evt){   // Display the image container
+					console.log("evt",evt.target)
+					console.log("evt2",evt.target.parentElement.parentElement.querySelector("#imageContainer"))
+					evt.target.parentElement.parentElement.querySelector("#imageContainer").style.display = 'block';
+        
+  
+        // Apply the fadeIn animation to the image
+     				 evt.target.parentElement.parentElement.querySelector("#hiddenImage").style.animation = 'fadeIn 1s forwards';});
+           });
+
+            // Initialize percentage values
+             percentages.forEach(function(percentage, index) {
+                percentage.innerHTML = ranges[index].value + '%';
+
+            });  
+            
+    </script>
 	</body>
+
 </html>
+

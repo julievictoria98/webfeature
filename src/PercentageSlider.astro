@@ -1,0 +1,103 @@
+---
+const {graphText, classColor, graphImg} = Astro.props
+---
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive Meter</title>
+    </head>
+    <body>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                width: 60%;
+                gap: 20px;
+            }
+            input[type=range]{
+                -webkit-appearance: none;
+                width: 100%;
+                background:transparent;
+            }
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none; 
+                height:63px;
+                width: 65px;
+                background-image: url("../public/star.svg");
+                background-size: cover; /* Ensure the image covers the entire thumb */
+                cursor: pointer;
+                transform: translateY(-35%);
+            }
+            input[type=range]::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 20px;
+                cursor: pointer;
+                background:#FC4E5C;
+                border-radius: 20px;
+            }
+            input[type=range]:focus {
+                outline: none;
+            }
+            h1,
+            .percentage{
+                font-family:Arial, Helvetica, sans-serif;
+                justify-self: center;
+                text-align: center;
+            }
+
+            .redcolor{
+                color: #FC4E5C;
+            }
+
+            .bluecolor{
+                color: #273AA9
+            }
+            #imageContainer {
+                display: none; /* Initially hide the image container */
+            }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+        </style>
+        <article id>
+            <h1 class={classColor}>{graphText}</h1>
+            <div id="app">
+                <input value="0" min="0" max="100" id="range" type="range" />
+            </div>
+            <h2 class="percentage">0</h2>
+            <div id="imageContainer">
+                <img src={graphImg} alt="Your Image" id="hiddenImage">
+            </div>
+
+        </article>  
+        
+        <script>
+            const ranges = document.querySelectorAll('input[type="range"]');
+            const percentages = document.querySelectorAll('.percentage');
+
+            // Add event listeners to each input range
+            ranges.forEach(function(range, index) {
+                range.addEventListener('input', function() {
+                    percentages[index].innerHTML = range.value + '%';
+                });
+				range.addEventListener('click', function(evt){   // Display the image container
+					evt.target.parentElement.parentElement.querySelector("#imageContainer").style.display = 'block';
+  
+            // Apply the fadeIn animation to the image
+     				 evt.target.parentElement.parentElement.querySelector("#hiddenImage").style.animation = 'fadeIn 1s forwards';});
+           });
+
+            // Initialize percentage values
+             percentages.forEach(function(percentage, index) {
+                percentage.innerHTML = ranges[index].value + '%';
+
+            });  
+            
+    </script>
+    </body>
+</html>
