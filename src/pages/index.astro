@@ -39,35 +39,7 @@ import PercentageSlider from "../PercentageSlider.astro"
 
 		/>
 
-		<script>
-            const sliderThumb = document.querySelector('#range');
-            const imageContainer = document.getElementById('imageContainer');
-            const hiddenImage = document.getElementById('hiddenImage');
-            const ranges = document.querySelectorAll('input[type="range"]');
-            const percentages = document.querySelectorAll('.percentage');
 
-            // Add event listeners to each input range
-            ranges.forEach(function(range, index) {
-                range.addEventListener('input', function() {
-                    percentages[index].innerHTML = range.value + '%';
-                });
-				range.addEventListener('click', function(evt){   // Display the image container
-					console.log("evt",evt.target)
-					console.log("evt2",evt.target.parentElement.parentElement.querySelector("#imageContainer"))
-					evt.target.parentElement.parentElement.querySelector("#imageContainer").style.display = 'block';
-        
-  
-        // Apply the fadeIn animation to the image
-     				 evt.target.parentElement.parentElement.querySelector("#hiddenImage").style.animation = 'fadeIn 1s forwards';});
-           });
-
-            // Initialize percentage values
-             percentages.forEach(function(percentage, index) {
-                percentage.innerHTML = ranges[index].value + '%';
-
-            });  
-            
-    </script>
 	</body>
 
 </html>
