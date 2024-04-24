@@ -2,6 +2,9 @@
 import PercentageSlider from "../components/PercentageSlider.astro";
 import Chat from "../components/Chat.astro";
 import Mirror from "../components/Mirror.astro";
+import Stars from "../components/Stars.astro";
+import Sparkling from "../components/Sparkling.astro";
+import Umbrella from "../components/Umbrella.astro";
 ---
 
 <html lang="en">
@@ -29,23 +32,36 @@ import Mirror from "../components/Mirror.astro";
       graphText="HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
       classColor="bluecolor"
       graphImg="../public/star.svg"
-    />
+    >
+      <Umbrella />
+    </PercentageSlider>
+
+     />
     <br />
     <PercentageSlider
       graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
       classColor="redcolor"
       graphImg="../public/star.svg"
-    />
+    >
+      <Stars />
+    </PercentageSlider>
+
+     />
     <br />
     <PercentageSlider
       graphText="HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
       classColor="bluecolor"
       graphImg="../public/star.svg"
-    />
+    >
+      <Sparkling />
+    </PercentageSlider>
+
+     />
     <PercentageSlider
       graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
       classColor="bluecolor"
-      <Mirror
-    />
+    >
+      <Mirror>/></Mirror>
+    </PercentageSlider>
   </body>
 </html>
