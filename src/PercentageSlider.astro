@@ -1,5 +1,5 @@
 ---
-const {graphText, classColor, graphImg} = Astro.props
+const {graphText, classColor} = Astro.props
 ---
 
 
@@ -64,23 +64,21 @@ const {graphText, classColor, graphImg} = Astro.props
   to { opacity: 1; }
 }
         </style>
-        <article id>
+        <article>
             <h1 class={classColor}>{graphText}</h1>
             <div id="app">
                 <input value="0" min="0" max="100" id="range" type="range" />
             </div>
             <h2 class="percentage">0</h2>
-            <div id="imageContainer">
-                <img src={graphImg} alt="Your Image" id="hiddenImage">
+            <div id="imageContainer"  id="hiddenImage">
+                <slot/>
             </div>
-
         </article>  
         
         <script>
             const ranges = document.querySelectorAll('input[type="range"]');
             const percentages = document.querySelectorAll('.percentage');
 
-            // Add event listeners to each input range
             ranges.forEach(function(range, index) {
                 range.addEventListener('input', function() {
                     percentages[index].innerHTML = range.value + '%';
@@ -88,7 +86,6 @@ const {graphText, classColor, graphImg} = Astro.props
 				range.addEventListener('click', function(evt){   // Display the image container
 					evt.target.parentElement.parentElement.querySelector("#imageContainer").style.display = 'block';
   
-            // Apply the fadeIn animation to the image
      				 evt.target.parentElement.parentElement.querySelector("#hiddenImage").style.animation = 'fadeIn 1s forwards';});
            });
 
