@@ -1,0 +1,39 @@
+---
+const {quotes} = Astro.props; 
+---
+<div class="quote">
+<q>{quotes}</q>
+</div>
+<style>
+
+.quote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+      }
+
+q {
+    color: #273AA9;
+    font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+ 
+}
+
+
+@media screen and (max-width: 680px) {
+q {
+    width: 70vw;
+    max-width: 800px;
+    margin: 4rem 0;
+    font-size: 1.3rem;
+
+
+}
+}
+</style>
