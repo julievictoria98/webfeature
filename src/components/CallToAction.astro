@@ -1,47 +1,46 @@
 ---
-import Knap from "../components/Knap.astro"
+import Knap from "../components/Knap.astro";
 ---
 
 <card class="call-to-action">
+  <img src="calltoactionpic.png" alt="" />
 
-    <img src="calltoactionpic.png" alt="">
-
-<div class="text-container">
-<h2>Bliv en del af vores sisterhood</h2>
-<Knap/>
-</div>
+  <div class="text-container">
+    <h2>Bliv en del af vores sisterhood</h2>
+    <Knap />
+  </div>
 </card>
 
 <style>
-
-h2 {
-    color: #273AA9;
+  h2 {
+    color: #273aa9;
     font-family: "obviously", sans-serif;
-font-weight: 700;
-font-style: normal;
-font-size: 1.125rem;
-text-transform: uppercase;
-}
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+  }
 
-.call-to-action {
+  .call-to-action {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     place-items: center;
-}
+  }
 
-.text-container {
+  .text-container {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
-}
+  }
 
-.call-to-action, .text-container {
-grid-area: 1/1;
-}
+  .call-to-action,
+  .text-container {
+    grid-area: 1/1;
+  }
 
-.call-to-action, img {
-grid-area: 1/1;
-}
-
-</style>
+  .call-to-action,
+  img {
+    grid-area: 1/1;
+  }
+</style>./Knap.astro
