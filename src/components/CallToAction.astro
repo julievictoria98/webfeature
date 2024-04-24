@@ -17,26 +17,26 @@ import Knap from "../components/Knap.astro";
     font-family: "obviously", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 2.5vw;
+    font-size: 1rem;
     text-transform: uppercase;
   }
 
   .call-to-action {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
     place-items: center;
-    margin-top:15rem;
+    padding: 20rem 0 10rem;
   }
 
   #end-img {
-    width: 50%;
+    width: 80%;
+    max-width: 500px;
   }
 
   .text-container {
     display: flex;
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 2rem;
   }
 
   .call-to-action,
@@ -49,10 +49,5 @@ import Knap from "../components/Knap.astro";
     grid-area: 1/1;
   }
 
-  @media screen and (max-width: 680px){
 
-h2{font-size: 3vw;} 
-
-
-}
 </style>
