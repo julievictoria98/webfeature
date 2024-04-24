@@ -16,6 +16,7 @@ import Mirror from "../Components/Mirror.astro";
     <title>Astro</title>
   </head>
   <body>
+    <div class="bg"></div>
     <Chat
       src={"/mirrorGirl.webp"}
       text={"Jeg får det dårligt af at kigge på Instagram Når jeg står og ser mig selv i spejlet føler jeg min krop er forkert. Min mave er for tyk, mine bryster er for små, mine ben er for korte... "}
@@ -59,3 +60,15 @@ import Mirror from "../Components/Mirror.astro";
     </PercentageSlider>
   </body>
 </html>
+
+<style>
+
+body{
+  background-color: #fff5eb;
+  background-image: url('../../public/Imgs/FloralVines.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+</style>
