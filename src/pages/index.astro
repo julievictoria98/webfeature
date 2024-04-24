@@ -7,6 +7,10 @@ import Umbrella from "../components/Umbrella.astro";
 import Mirror from "../components/Mirror.astro";
 import Qoutes from "../components/Quotes.astro"
 import Menu from "../components/Menu.astro"
+import CallToAction from "../components/CallToAction.astro"
+import Video from "../components/Video.astro";
+import Viserdig from "../components/Viserdig.astro";
+
 ---
 <!-- import PercentageSlider from "../Components/PercentageSlider.astro";
 import Chat from "../Components/Chat.astro";
@@ -51,6 +55,9 @@ import Qoutes from "../Components/Quotes.astro" -->
 			/>
 		</section>
 		<section>
+			<Video/>
+		</section>
+		<section>
 			<Chat
 			src={"/mirrorGirl.webp"}
 			text={"Jeg får det dårligt af at kigge på Instagram Når jeg står og ser mig selv i spejlet føler jeg min krop er forkert. Min mave er for tyk, mine bryster er for små, mine ben er for korte... "}
@@ -76,7 +83,6 @@ import Qoutes from "../Components/Quotes.astro" -->
         classColor="redcolor" >
         <Stars />
       </PercentageSlider>
-
 		<PercentageSlider
 			graphText="HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
 			classColor="bluecolor">
@@ -90,8 +96,13 @@ import Qoutes from "../Components/Quotes.astro" -->
 			<Mirror />
 			</PercentageSlider>
 		</section>
+	</div>
+	<section class="bagground-color">
+		<Viserdig/>
+		<CallToAction />
+	</section>
 	</main>
-    </div>
+    
   </body>
 </html>
 
@@ -137,5 +148,11 @@ text-align: left;
     flex-direction: column;
     width: 100%;
     gap: 20px;
+
+  }
+  .bagground-color{
+	background-color:#FFF5EB;
+	padding-top: 10rem;
+
   }
 </style>
