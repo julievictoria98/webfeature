@@ -12,13 +12,8 @@ const interactivity = {
     },
     {
       visibility: [0.2, 0.45],
-      type: "seek",
-      frames: [0, 45],
-    },
-    {
-      visibility: [0.45, 1.0],
-      type: "seek",
-      frames: [45, 300],
+      type: "loop",
+      frames: [0, 121],
     },
   ],
 };

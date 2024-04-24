@@ -16,7 +16,6 @@ import Mirror from "../Components/Mirror.astro";
     <title>Astro</title>
   </head>
   <body>
-    <div class="bg"></div>
     <Chat
       src={"/mirrorGirl.webp"}
       text={"Jeg får det dårligt af at kigge på Instagram Når jeg står og ser mig selv i spejlet føler jeg min krop er forkert. Min mave er for tyk, mine bryster er for små, mine ben er for korte... "}
@@ -29,46 +28,53 @@ import Mirror from "../Components/Mirror.astro";
       src={"phoneGirl.webp"}
       text={"Mine veninder er begyndt at drikke alkohol og holde fester. Jeg føler mig presset og er bange for at blive holdt udenfor, hvis jeg ikke gør det også"}
     />
-    <PercentageSlider
-      graphText="HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
-      classColor="bluecolor"
-    >
-      <Umbrella />
-    </PercentageSlider>
+    <div class="question_container">
+      <PercentageSlider
+        graphText="HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
+        classColor="bluecolor"
+      >
+        <Umbrella />
+      </PercentageSlider>
 
-    <br />
-    <PercentageSlider
-      graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
-      classColor="redcolor"
-    >
-      <Stars />
-    </PercentageSlider>
+      <br />
+      <PercentageSlider
+        graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
+        classColor="redcolor"
+      >
+        <Stars />
+      </PercentageSlider>
 
-    <br />
-    <PercentageSlider
-      graphText="HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
-      classColor="bluecolor"
-    >
-      <Sparkling />
-    </PercentageSlider>
+      <br />
+      <PercentageSlider
+        graphText="HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
+        classColor="bluecolor"
+      >
+        <Sparkling />
+      </PercentageSlider>
 
-    <PercentageSlider
-      graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
-      classColor="bluecolor"
-    >
-      <Mirror />
-    </PercentageSlider>
+      <PercentageSlider
+        graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
+        classColor="bluecolor"
+      >
+        <Mirror />
+      </PercentageSlider>
+    </div>
   </body>
 </html>
 
 <style>
+  body {
+    background-color: #fff5eb;
+    background-image: url("../../public/Imgs/FloralVines.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-body{
-  background-color: #fff5eb;
-  background-image: url('../../public/Imgs/FloralVines.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
+  .question_container {
+    background-color: #f7c7d9;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
 </style>
