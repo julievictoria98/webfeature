@@ -1,95 +1,112 @@
 ---
-const {graphText, classColor} = Astro.props
+const { graphText, classColor } = Astro.props;
 ---
 
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Interactive Meter</title>
-    </head>
-    <body>
-        <style>
-           
-            input[type=range]{
-                -webkit-appearance: none;
-                width: 100%;
-                background:transparent;
-            }
-            input[type=range]::-webkit-slider-thumb {
-                -webkit-appearance: none; 
-                height:63px;
-                width: 65px;
-                background-image: url("../../public/star.svg");
-                background-size: cover; /* Ensure the image covers the entire thumb */
-                cursor: pointer;
-                transform: translateY(-35%);
-            }
-            input[type=range]::-webkit-slider-runnable-track {
-                width: 100%;
-                height: 20px;
-                cursor: pointer;
-                background:#FC4E5C;
-                border-radius: 20px;
-            }
-            input[type=range]:focus {
-                outline: none;
-            }
-            h1,
-            .percentage{
-                font-family:Arial, Helvetica, sans-serif;
-                justify-self: center;
-                text-align: center;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Meter</title>
+  </head>
+  <body>
+    <style>
+      article {
+        margin: auto;
+        display: grid;
+        justify-content: center;
+        max-width: 600px;
+        padding: 15rem 2rem;
+      }
+      input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        margin: auto;
+        align-items: center;
+        padding: 2rem 0 0;
+        background: transparent;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 63px;
+        width: 65px;
+        background-image: url("/star.svg");
+        background-size: cover; /* Ensure the image covers the entire thumb */
+        cursor: pointer;
+        transform: translateY(-35%);
+      }
+      input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 20px;
+        cursor: pointer;
+        background: #fc4e5c;
+        border-radius: 20px;
+      }
+      input[type="range"]:focus {
+        outline: none;
+      }
+      h1,
+      .percentage {
+        font-family: Arial, Helvetica, sans-serif;
+        justify-self: center;
+        text-align: center;
+        font-size: 2rem;
+      }
 
-            .redcolor{
-                color: #FC4E5C;
-            }
+      .redcolor {
+        color: #fc4e5c;
+      }
 
-            .bluecolor{
-                color: #273AA9
-            }
-            #imageContainer {
-                display: none; /* Initially hide the image container */
-            }
+      .bluecolor {
+        color: #273aa9;
+      }
+      #imageContainer {
+        display: none; /* Initially hide the image container */
+      }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-        </style>
-        <article>
-            <h1 class={classColor}>{graphText}</h1>
-            <div id="app">
-                <input value="0" min="0" max="100" id="range" type="range" />
-            </div>
-            <h2 class="percentage">0</h2>
-            <div id="imageContainer"  id="hiddenImage">
-                <slot/>
-            </div>
-        </article>  
-        
-        <script>
-            const ranges = document.querySelectorAll('input[type="range"]');
-            const percentages = document.querySelectorAll('.percentage');
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+    <article>
+      <h1 class={classColor}>{graphText}</h1>
+      <div id="app">
+        <input value="0" min="0" max="100" id="range" type="range" />
+      </div>
+      <h2 class="percentage">0</h2>
+      <div id="imageContainer" id="hiddenImage">
+        <slot />
+      </div>
+    </article>
 
-            ranges.forEach(function(range, index) {
-                range.addEventListener('input', function() {
-                    percentages[index].innerHTML = range.value + '%';
-                });
-				range.addEventListener('click', function(evt){   // Display the image container
-					evt.target.parentElement.parentElement.querySelector("#imageContainer").style.display = 'block';
-  
-     				 evt.target.parentElement.parentElement.querySelector("#hiddenImage").style.animation = 'fadeIn 1s forwards';});
-           });
+    <script>
+      const ranges = document.querySelectorAll('input[type="range"]');
+      const percentages = document.querySelectorAll(".percentage");
 
-            // Initialize percentage values
-             percentages.forEach(function(percentage, index) {
-                percentage.innerHTML = ranges[index].value + '%';
+      ranges.forEach(function (range, index) {
+        range.addEventListener("input", function () {
+          percentages[index].innerHTML = range.value + "%";
+        });
+        range.addEventListener("click", function (evt) {
+          // Display the image container
+          evt.target.parentElement.parentElement.querySelector(
+            "#imageContainer"
+          ).style.display = "block";
 
-            });  
-            
+          evt.target.parentElement.parentElement.querySelector(
+            "#hiddenImage"
+          ).style.animation = "fadeIn 1s forwards";
+        });
+      });
+
+      // Initialize percentage values
+      percentages.forEach(function (percentage, index) {
+        percentage.innerHTML = ranges[index].value + "%";
+      });
     </script>
-    </body>
+  </body>
 </html>
