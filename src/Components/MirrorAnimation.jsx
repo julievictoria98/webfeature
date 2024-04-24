@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Lottie from "lottie-react";
 import mirrorAnimation from "../../public/Animations/Mirror.json";
@@ -25,10 +26,7 @@ const interactivity = {
 
 const MirrorAnimation = () => {
   return (
-    <Lottie
-      animationData={mirrorAnimation}
-      interactivity={interactivity}
-    />
+    <Lottie animationData={mirrorAnimation} interactivity={interactivity} />
   );
 };
 
