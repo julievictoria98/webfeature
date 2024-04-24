@@ -1,37 +1,82 @@
 ---
-const {quotes} = Astro.props; 
+const { quotes } = Astro.props;
 ---
+
 <div class="quote">
-<q>{quotes}</q>
+  <q>{quotes}</q>
 </div>
 <style>
+  .quote {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+  }
 
-.quote {
-        display: flex;
-        flex-direction: column;
+  .appearing {
+    opacity: 1;
+    animation: appearing 2s ease-in forwards;
+  }
 
+  @keyframes appearing {
+    0% {
+opacity: 0;
+    }
 
-      }
+    5% {
+      transform: translate(0, -10px);
+      scale: 1.02;
+    }
 
-q {
-    color: #273AA9;
+    19% {
+      opacity: 1;
+
+    }
+
+    21% {
+      transform: translate(0, 0);
+      scale: 1;
+    }
+
+    30% {
+      opacity: 1;
+    }
+  }
+
+  q {
+    color: #273aa9;
     font-family: "Archivo", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-    font-size: 1.8vw;
- 
-}
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
 
-
-@media screen and (max-width: 800px) {
-q {
-   
-    max-width: 800px;
-    margin: 4rem 0;
-    font-size: 3vw;
-
-
-}
-}
+  @media screen and (max-width: 800px) {
+    q {
+      max-width: 800px;
+      margin: 4rem 0;
+      font-size: 3vw;
+    }
+  }
 </style>
+
+<script>
+  const quotes = document.querySelectorAll(".quote")
+
+  window.addEventListener("scroll", quoteAppear);
+
+  function quoteAppear() {
+    const triggerBottom = window.innerHeight - 400;
+
+    quotes.forEach((quote) => {
+      const quoteHeight = quote.getBoundingClientRect().height;
+      const quoteTop = quote.getBoundingClientRect().top;
+      const quoteBottom = quote.getBoundingClientRect().bottom;
+
+      if (quoteTop < triggerBottom && quoteTop > -quoteHeight + 100) {
+        quote.classList.add("appearing")
+      }
+    })
+
+  }
+</script>
