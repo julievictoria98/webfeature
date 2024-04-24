@@ -52,62 +52,24 @@ import Qoutes from "../Components/Quotes.astro"
 			text={"Mine veninder er begyndt at drikke alkohol og holde fester. Jeg føler mig presset og er bange for at blive holdt udenfor, hvis jeg ikke gør det også"}
 			/>
 		</section>
-		<section>
-			<PercentageSlider
-			graphText="HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
-			classColor="bluecolor"
-			>
-			<Umbrella />
-			</PercentageSlider>
-    <Chat
-      src={"/mirrorGirl.webp"}
-      text={"Jeg får det dårligt af at kigge på Instagram Når jeg står og ser mig selv i spejlet føler jeg min krop er forkert. Min mave er for tyk, mine bryster er for små, mine ben er for korte... "}
-    />
-    <Chat
-      src={"/sittingGirl.webp"}
-      text={"Jeg har faktisk nogle gode veninder, men jeg føler mig stadig rigtig ensom. Jeg har tre gode veninder. Jeg savner virkelig noget fællesskab og sammenhold i en lidt større vennekreds. Så i bund og grund er jeg rigtig tit alene. Det gør mig rigtig ked af det."}
-    />
-    <Chat
-      src={"phoneGirl.webp"}
-      text={"Mine veninder er begyndt at drikke alkohol og holde fester. Jeg føler mig presset og er bange for at blive holdt udenfor, hvis jeg ikke gør det også"}
-    />
     <div class="question_container">
       <PercentageSlider
         graphText="HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
-        classColor="bluecolor"
-      >
+        classColor="bluecolor">
         <Umbrella />
       </PercentageSlider>
 
-			<br />
-			<PercentageSlider
-			graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
-			classColor="redcolor"
-			>
-			<Stars />
-			</PercentageSlider>
-      <br />
       <PercentageSlider
         graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
-        classColor="redcolor"
-      >
+        classColor="redcolor" >
         <Stars />
       </PercentageSlider>
 
-			<br />
-			<PercentageSlider
+		<PercentageSlider
 			graphText="HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
-			classColor="bluecolor"
-			>
+			classColor="bluecolor">
 			<Sparkling />
-			</PercentageSlider>
-      <br />
-      <PercentageSlider
-        graphText="HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
-        classColor="bluecolor"
-      >
-        <Sparkling />
-      </PercentageSlider>
+		</PercentageSlider>
 
 			<PercentageSlider
 			graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
@@ -117,12 +79,6 @@ import Qoutes from "../Components/Quotes.astro"
 			</PercentageSlider>
 		</section>
 	</main>
-      <PercentageSlider
-        graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
-        classColor="bluecolor"
-      >
-        <Mirror />
-      </PercentageSlider>
     </div>
   </body>
 </html>
@@ -140,7 +96,7 @@ body{
 	display: grid;
 	grid-template-columns: 1fr;
 	row-gap: 40rem;
-	margin: 20rem;
+	margin: 20vw;
 }
 .grid1-1 div:nth-child(1){
 text-align: right;
