@@ -1,10 +1,11 @@
 ---
-import PercentageSlider from "../components/PercentageSlider.astro";
-import Chat from "../components/Chat.astro";
+import PercentageSlider from "../Components/PercentageSlider.astro";
+import Chat from "../Components/Chat.astro";
 import Stars from "../Components/Stars.astro";
 import Sparkling from "../Components/Sparkling.astro";
 import Umbrella from "../Components/Umbrella.astro";
 import Mirror from "../Components/Mirror.astro";
+import Qoutes from "../Components/Quotes.astro"
 ---
 
 <html lang="en">
@@ -14,61 +15,107 @@ import Mirror from "../Components/Mirror.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ekx8bwt.css">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <div class="bg"></div>
-    <Chat
-      src={"/mirrorGirl.webp"}
-      text={"Jeg får det dårligt af at kigge på Instagram Når jeg står og ser mig selv i spejlet føler jeg min krop er forkert. Min mave er for tyk, mine bryster er for små, mine ben er for korte... "}
-    />
-    <Chat
-      src={"/sittingGirl.webp"}
-      text={"Jeg har faktisk nogle gode veninder, men jeg føler mig stadig rigtig ensom. Jeg har tre gode veninder. Jeg savner virkelig noget fællesskab og sammenhold i en lidt større vennekreds. Så i bund og grund er jeg rigtig tit alene. Det gør mig rigtig ked af det."}
-    />
-    <Chat
-      src={"phoneGirl.webp"}
-      text={"Mine veninder er begyndt at drikke alkohol og holde fester. Jeg føler mig presset og er bange for at blive holdt udenfor, hvis jeg ikke gør det også"}
-    />
-    <PercentageSlider
-      graphText="HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
-      classColor="bluecolor"
-    >
-      <Umbrella />
-    </PercentageSlider>
+	<main>
+		<section class="grid1-1">
+			<div><Qoutes 
+			quotes="Jeg føler mig anderledes ift. pigerne i min klasse"/></div>
+			
+			<Qoutes
+			quotes="Jeg hader min krop, fordi jeg føler mig for tyk.   " />
+			
+			<div><Qoutes 
+			quotes="Jeg har fået diagnosen autisme, så jeg føler anderledes end de andre "
+			/></div>
+			
+			<Qoutes 
+			quotes="Selvom jeg har venner, føler jeg mig tit ensom."
+			/>
+		</section>
+		<section>
+			<Chat
+			src={"/mirrorGirl.webp"}
+			text={"Jeg får det dårligt af at kigge på Instagram Når jeg står og ser mig selv i spejlet føler jeg min krop er forkert. Min mave er for tyk, mine bryster er for små, mine ben er for korte... "}
+			/>
+			<Chat
+			src={"/sittingGirl.webp"}
+			text={"Jeg har faktisk nogle gode veninder, men jeg føler mig stadig rigtig ensom. Jeg har tre gode veninder. Jeg savner virkelig noget fællesskab og sammenhold i en lidt større vennekreds. Så i bund og grund er jeg rigtig tit alene. Det gør mig rigtig ked af det."}
+			/>
+			<Chat
+			src={"phoneGirl.webp"}
+			text={"Mine veninder er begyndt at drikke alkohol og holde fester. Jeg føler mig presset og er bange for at blive holdt udenfor, hvis jeg ikke gør det også"}
+			/>
+		</section>
+		<section>
+			<PercentageSlider
+			graphText="HVOR MANGE LGTBQ+ ELEVER TROR DU FØLER, AT DE IKKE KAN VÆRE SIG SELV?"
+			classColor="bluecolor"
+			>
+			<Umbrella />
+			</PercentageSlider>
 
-    <br />
-    <PercentageSlider
-      graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
-      classColor="redcolor"
-    >
-      <Stars />
-    </PercentageSlider>
+			<br />
+			<PercentageSlider
+			graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
+			classColor="redcolor"
+			>
+			<Stars />
+			</PercentageSlider>
 
-    <br />
-    <PercentageSlider
-      graphText="HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
-      classColor="bluecolor"
-    >
-      <Sparkling />
-    </PercentageSlider>
+			<br />
+			<PercentageSlider
+			graphText="HVOR MANGE PIGER I 9.KLASSE, TROR DU HAR LAVT SELVÆRD?"
+			classColor="bluecolor"
+			>
+			<Sparkling />
+			</PercentageSlider>
 
-    <PercentageSlider
-      graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
-      classColor="bluecolor"
-    >
-      <Mirror />
-    </PercentageSlider>
+			<PercentageSlider
+			graphText="HVOR MANGE 15 ÅRIGE PIGER, TROR DU, FØLER SIG FOR TYKKE?"
+			classColor="bluecolor"
+			>
+			<Mirror />
+			</PercentageSlider>
+		</section>
+	</main>
   </body>
 </html>
 
 <style>
 
 body{
-  background-color: #fff5eb;
+  background-color: #FFF5EB;
   background-image: url('../../public/Imgs/FloralVines.png');
   background-repeat: no-repeat;
   background-size: cover;
+} 
+
+.grid1-1{
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 40rem;
+	margin: 20rem;
 }
+.grid1-1 div:nth-child(1){
+text-align: right;
+}
+.grid1-1:nth-child(2){
+text-align: left;
+}
+.grid1-1 div:nth-child(3){
+	text-align: right;
+}
+
+.grid1-1:nth-child(4){
+	text-align: left;
+}
+
 
 
 </style>
